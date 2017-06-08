@@ -1,17 +1,33 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="<%= config.lang %>">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><%= config.title %></title>
-    <meta name="description" content="">
+    <meta name="description" content="<%= config.description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Web Application Manifest -->
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="singlet">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="singlet pwa project">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#673ab7">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#673ab7">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic">
+    <link rel="stylesheet" href="<%= config.fontawesome %>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body>
-    <div id="container"></div>
+    <div class="root"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkYy92ZAfUy0FPyO2vz0dJHrjVbg_eOmU" type="text/javascript"></script>
     <script src="<%= bundle %>"></script>
     <%_ if (!debug && config.trackingID) { _%>
     <script>
